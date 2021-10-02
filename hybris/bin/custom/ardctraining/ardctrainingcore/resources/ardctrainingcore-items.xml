@@ -25,13 +25,89 @@
             <value code="WHITE"/>
             <value code="YELLOW"/>
         </enumtype>
+
+        <enumtype code="CustomLabelTypeEnum" generate="true" dynamic="true">
+           <value code="PRIMARY"/>
+            <value code="SECONDARY"/>
+            <value code="ALTERNATIVE"/>
+        </enumtype>
     </enumtypes>
 
     <itemtypes>
 
         <!-- Add your item definitions here -->
+        <typegroup name="ardctraining">
+            <itemtype code="CustomProductLabel"
+                      autocreate="true" generate="true"
+                      jaloclass="com.ardctraining.core.jalo.CustomProductLabel">
+                <deployment table="custprodlabel" typecode="10602" />
+                <attributes>
+                    <attribute qualifier="label" type="java.lang.String">
+                        <modifiers write="true" read="true" unique="true"/>
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="labelType" type="CustomLabelTypeEnum">
+                        <modifiers write="true" read="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="validityDate" type="java.util.Date">
+                        <modifiers write="true" read="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="customer" type="Customer">
+                        <modifiers write="true" read="true" unique="true"/>
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="product" type="Product" >
+                        <modifiers write="true" read="true" unique="true"/>
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+                <indexes>
+                    <index name="pk_custprodlabel" unique="true">
+                        <key attribute="label" />
+                        <key attribute="customer" />
+                        <key attribute="product" />
+                    </index>
+                </indexes>
+            </itemtype>
 
+            <itemtype code="Customer" autocreate="false" generate="false">
+                <attributes>
+                    <attribute qualifier="company" type="java.lang.String">
+                        <modifiers write="true" read="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="jobRole" type="JobRole">
+                        <modifiers write="true" read="true" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
 
+            <itemtype code="JobRole"
+                      autocreate="true"
+                      generate="true"
+                      jaloclass="com.ardctraining.core.jalo.JobRole">
+                <description>Customer's job role</description>
+                <deployment table="jobrole" typecode="10601" />
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <modifiers read="true" write="true" unique="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="description" type="java.lang.String">
+                        <modifiers write="true" read="true" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+                <indexes>
+                    <index name="pk_jobrole" unique="true">
+                        <key attribute="code" />
+                    </index>
+                </indexes>
+            </itemtype>
+        </typegroup>
         <!-- TypeGroups are for structure of this file only -->
 
         <typegroup name="Apparel">

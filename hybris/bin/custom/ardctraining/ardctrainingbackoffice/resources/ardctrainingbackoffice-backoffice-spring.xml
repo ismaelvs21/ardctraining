@@ -11,5 +11,7 @@
   		<property name="location" value="/ardctrainingbackoffice-backoffice-labels/"/>
   		<property name="name" value="labels"/>
   	</bean>
+	<bean id="customProductLabelLabelProvider" class="com.ardctraining.backoffice.labels.CustomProductLabelLabel" />
+
 
 </beans>

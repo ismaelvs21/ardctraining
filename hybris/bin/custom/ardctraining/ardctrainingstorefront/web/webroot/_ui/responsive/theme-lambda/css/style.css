@@ -18567,6 +18567,23 @@ select[multiple].input-sm {
     height: 320px;
   }
 }
+.product-details__product-custom-labels {
+  display: block;
+  margin-bottom: 10px;
+}
+.product-details__product-custom-labels__item {
+  font-size: 1em;
+  color: white;
+}
+.product-details__product-custom-labels__item.primary {
+  background-color: #0068b3;
+}
+.product-details__product-custom-labels__item.secondary {
+  background-color: #0000ff;
+}
+.product-details__product-custom-labels__item.alternative {
+  background-color: #ff0000;
+}
 .skip,
 .skiptocontent,
 .skiptonavigation {
