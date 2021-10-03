@@ -107,6 +107,10 @@
                     </index>
                 </indexes>
             </itemtype>
+
+            <itemtype code="CustomProductLabelCleanupCronJob" generate="true" autocreate="true" extends="CronJob">
+
+            </itemtype>
         </typegroup>
         <!-- TypeGroups are for structure of this file only -->
 
