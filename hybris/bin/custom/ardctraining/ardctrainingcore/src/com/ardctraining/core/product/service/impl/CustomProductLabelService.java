@@ -10,10 +10,11 @@ public interface CustomProductLabelService {
 
     List<CustomProductLabelModel> findByCustomerAndProduct(CustomerModel customer, ProductModel product);
 
-
     List<CustomProductLabelModel> findExpired();
 
+    List<CustomProductLabelModel>findByCustomerAndProductAndNullCustomer(CustomerModel customer,ProductModel product);
 
 
+    List<CustomProductLabelModel>findByProduct( ProductModel product);
 
 }

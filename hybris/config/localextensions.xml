@@ -264,6 +264,6 @@
       <extension name="ardctraininginitialdata"/>
       <extension name="ardctrainingtest"/>
       <extension name="ardctrainingstorefront"/>
-<extension name="ardctrainingwebservices"/>
+
   </extensions>
 </hybrisconfig>

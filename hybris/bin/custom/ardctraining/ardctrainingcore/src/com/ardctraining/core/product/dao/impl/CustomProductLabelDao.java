@@ -14,7 +14,8 @@ public interface CustomProductLabelDao {
 List<CustomProductLabelModel>findExpired(Date now);
 
 
+List<CustomProductLabelModel>findByCustomerAndProductAndNullCustomer(CustomerModel customer,ProductModel product);
 
-
+    List<CustomProductLabelModel>findByProduct( ProductModel product);
 
 }
