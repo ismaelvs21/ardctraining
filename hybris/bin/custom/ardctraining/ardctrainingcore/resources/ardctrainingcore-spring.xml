@@ -564,6 +564,7 @@
 		<property name="customProductLabelDao" ref="customProductLabelDao" />
 		<property name="timeService" ref="timeService" />
 	</bean>
+
 <!--
 	<alias name="defaultCustomProductLabelCleanupJobPerformable" alias="customProductLabelCleanupJobPerformable" />
 	<bean id="defaultCustomProductLabelCleanupJobPerformable"
