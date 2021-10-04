@@ -2,6 +2,7 @@ package com.ardctraining.core.product.service.impl;
 
 import com.ardctraining.core.model.CustomProductLabelModel;
 import com.ardctraining.core.product.dao.impl.CustomProductLabelDao;
+import com.ardctraining.core.product.service.impl.CustomProductLabelService;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.util.ServicesUtil;
@@ -14,6 +15,7 @@ public class DefaultCustomProductLabelService implements CustomProductLabelServi
 
     private CustomProductLabelDao customProductLabelDao;
     private TimeService timeService;
+
     @Override
     public List<CustomProductLabelModel> findByCustomerAndProduct(final CustomerModel customer, final ProductModel product) {
         ServicesUtil.validateParameterNotNull(customer, "customer cannot be null");
