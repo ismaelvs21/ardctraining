@@ -8,6 +8,8 @@
         <collectiontype code="GenderList" elementtype="Gender" autocreate="true" generate="true" type="list"/>
         <collectiontype code="SwatchColorSet" elementtype="SwatchColorEnum" autocreate="true" generate="true"
                         type="set"/>
+        <collectiontype code="CustomLabelSet" elementtype="java.lang.String" autocreate="true" generate="true" type="set"/>
+
     </collectiontypes>
 
     <enumtypes>
@@ -111,6 +113,20 @@
             <itemtype code="CustomProductLabelCleanupCronJob" generate="true" autocreate="true" extends="CronJob">
 
             </itemtype>
+            <itemtype code="CustomProductLabelCleanupEmailProcess"
+                      generate="true" autocreate="true" extends="StoreFrontProcess">
+                <attributes>
+                    <attribute qualifier="customLaels" type="CustomLabelSet">
+                        <modifiers read="true" write="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="language" type="Language">
+                        <modifiers read="true" write="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
         </typegroup>
         <!-- TypeGroups are for structure of this file only -->
 

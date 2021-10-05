@@ -209,4 +209,9 @@
 		  parent="variantCommerceSearchResultProductPopulator">
 		<property name="userService" ref="userService" />
 	</bean>
+	<!--nmonday email-->
+	<bean id="customProductLabelCleanupEmailContext" class="com.ardctraining.facades.process.email.context.CustomProductLabelCleanupEmailContext"
+		  parent="abstractEmailContext">
+		<property name="configurationService" ref="configurationService"/>
+	</bean>
 </beans>
