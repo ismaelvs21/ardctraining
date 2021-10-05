@@ -28,6 +28,7 @@ public class CustomProductLabelLabel implements LabelProvider<CustomProductLabel
         return getLabel(model);
     }
 //pproduct nnew method
+
     @Override
     public String getIconPath(CustomProductLabelModel model) {
         return null;
