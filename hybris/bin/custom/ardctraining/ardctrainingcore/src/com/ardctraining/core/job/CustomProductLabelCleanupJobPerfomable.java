@@ -38,6 +38,7 @@ public class CustomProductLabelCleanupJobPerfomable extends AbstractJobPerformab
      LOG.debug("entering CustomProductLabelCleanupJobPerfomable::perfomable");
      final List<CustomProductLabelModel>labelsToDelete=getCustomProductLabelService().findExpired();
      LOG.info(String.format("labels to delete %s",labelsToDelete.size()));
+
     try {
         final Set<String>labels=getCustomLabels(labelsToDelete);
         modelService.removeAll(labelsToDelete);
