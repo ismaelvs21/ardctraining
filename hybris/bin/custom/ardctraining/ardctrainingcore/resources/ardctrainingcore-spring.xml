@@ -595,5 +595,19 @@
 	</property>
 	<property name="value" ref="storeFrontProcessContextStrategy"/>
 </bean>
-	<!-- END custom beans -->
+	<!-- proyect ardctraining.core.attributehandlers.FeedbackStatusAttributeHandler-->
+	<bean id="feedbackStatusAttributeHandler" class="com.ardctraining.core.attributehandlers.CustomerFeedbackStatusAttributeHandler" >
+	<property name="timeService" ref="timeService" />
+	<property name="configurationService" ref="configurationService" />
+		</bean>
+
+	<alias name="defaultCustomerFeedbackService" alias="customerFeedbackService"/>
+	<bean id="defaultCustomerFeedbackService" class="com.ardctraining.core.feedback.service.imp.DefaultCustomerFeedBackService" >
+		<property name="customerFeedbackDao" ref="customerFeedbackDao" />
+	</bean>
+
+	<alias name="defaultCustomerFeedbackDao" alias="customerFeedbackDao"/>
+	<bean id="defaultCustomerFeedbackDao" class="com.ardctraining.core.feedback.service.dao.imp.DefaultCustomerFeedBackDao" >
+		<property name="flexibleSearchService" ref="flexibleSearchService" />
+	</bean>
 </beans>

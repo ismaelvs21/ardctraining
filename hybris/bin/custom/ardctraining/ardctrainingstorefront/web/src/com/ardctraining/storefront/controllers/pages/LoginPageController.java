@@ -32,7 +32,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  */
 @Controller
 @RequestMapping(value = "/login")
-public class LoginPageController extends AbstractLoginPageController
+public class LoginPageController extends AbstractFeedbackLoginpageController
 {
 	private HttpSessionRequestCache httpSessionRequestCache;
 

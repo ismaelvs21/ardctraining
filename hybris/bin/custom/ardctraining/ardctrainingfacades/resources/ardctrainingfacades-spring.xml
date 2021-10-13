@@ -214,4 +214,15 @@
 		  parent="abstractEmailContext">
 		<property name="configurationService" ref="configurationService"/>
 	</bean>
+	<!--proyect-->
+	<alias name="customerFeedbackPopulator" alias="FeedbackPopulator"/>
+	<bean id="customerFeedbackPopulator" class="com.ardctraining.facades.populators.CustomerFeedbackPopulator">
+
+	</bean>
+
+	<bean id="customerFeedbackConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.ardctraining.facades.populators.CustomerFeedbackPopulator"/>
+		<property name="populators"/>
+
+	</bean>
 </beans>

@@ -249,13 +249,7 @@
     <extension name='permissionswebservices' />
     <extension name='webservicescommons' />
     <extension name='ywebservices' />
-    <extension name='orbeonweb' />
-    <extension name='xyformsbackoffice' />
-    <extension name='xyformsfacades' />
-    <extension name='xyformssamples' />
-    <extension name='xyformsservices' />
-    <extension name='xyformsstorefrontcommons' />
-    <extension name='xyformsweb' />
+
 
 <extension name="ardctrainingcore"/>
   <extension name="ardctrainingbackoffice"/>

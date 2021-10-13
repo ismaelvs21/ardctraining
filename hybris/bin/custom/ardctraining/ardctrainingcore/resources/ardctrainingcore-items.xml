@@ -33,12 +33,52 @@
             <value code="SECONDARY"/>
             <value code="ALTERNATIVE"/>
         </enumtype>
-    </enumtypes>
+        <enumtype code="FeedbackStatusEnum" generate="true" autocreate="true" dynamic="true" >
+        <value code="NOT_READ"/>
+        <value code="READ"/>
+        <value code="PASTDUE"/>
+        <value code="READ_PASTDUE"/>
+    </enumtype>
 
+    </enumtypes>
     <itemtypes>
 
         <!-- Add your item definitions here -->
         <typegroup name="ardctraining">
+            <!-- pROYECT-->
+            <itemtype code="CustomerFeedback" autocreate="true" generate="true">
+                <deployment table="customerfeedback" typecode="10603"/>
+                <attributes>
+                    <attribute qualifier="customer" type="Customer">
+                        <modifiers read="true" write="true" unique="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="read" type="java.lang.Boolean">
+                        <modifiers write="true" read="true" />
+                        <defaultvalue>Boolean.FALSE</defaultvalue>
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="subject" type="java.lang.String">
+                        <modifiers write="true" read="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="message" type="java.lang.String">
+                        <modifiers write="true" read="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="submittedDate" type="java.util.Date">
+                        <modifiers write="true" read="true" initial="true"/>
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="status" type="FeedbackStatusEnum">
+                        <modifiers write="false" read="true" />
+                        <persistence type="dynamic" attributeHandler="feedbackStatusAttributeHandler" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+
+            <!-- pROYECT-->
             <itemtype code="CustomProductLabel"
                       autocreate="true" generate="true"
                       jaloclass="com.ardctraining.core.jalo.CustomProductLabel">
@@ -126,7 +166,20 @@
                     </attribute>
                 </attributes>
             </itemtype>
-
+            <!-- Proyect -->
+            <itemtype code="CustomeerFeedbackEmailProcess" generate="true" autocreate="true" extends="StoreFrontProcess">
+                        <attributes>
+                            <attribute qualifier="customLabels" type="CustomLabelSet">
+                                <modifiers read="true" write="true"/>
+                                <persistence type="property"/>
+                            </attribute>
+                            <attribute qualifier="language" type="Language">
+                                <modifiers read="true" write="true"/>
+                                <persistence type="property"/>
+                            </attribute>
+                        </attributes>
+                    </itemtype>
+            <!-- Proyect -->
         </typegroup>
         <!-- TypeGroups are for structure of this file only -->
 
@@ -199,6 +252,8 @@
                 </attributes>
             </itemtype>
         </typegroup>
+
+
 
     </itemtypes>
 </items>

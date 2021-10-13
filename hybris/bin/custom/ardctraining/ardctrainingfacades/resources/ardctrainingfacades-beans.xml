@@ -19,6 +19,9 @@
 		<property name="label" type="java.lang.String" />
 		<property name="type" type="java.lang.String" />
 	</bean>
-
-
+	<!--Proyect			CustomerFeedbackData	-->
+	<bean class="com.ardctraining.facades.product.data.CustomProductLabelData">
+		<property name="subject" type="java.lang.String" />
+		<property name="message" type="java.lang.String" />
+	</bean>
 </beans>
