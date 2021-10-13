@@ -53,7 +53,8 @@ private Boolean isFiltered(CustomerFeedbackModel feedback){
 
     public FlexibleSearchService getFlexibleSearchService() {
         return flexibleSearchService;
-        //everything
+        //everythinggit init
+
     }
 
     public void setFlexibleSearchService(FlexibleSearchService flexibleSearchService) {
