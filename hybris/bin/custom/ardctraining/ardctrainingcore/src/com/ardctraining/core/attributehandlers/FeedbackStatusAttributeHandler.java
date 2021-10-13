@@ -42,7 +42,7 @@ public class FeedbackStatusAttributeHandler implements DynamicAttributeHandler<F
 
     @Override
     public void set(CustomerFeedbackModel model, FeedbackStatusEnum feedbackStatusEnum) {
-    
+    //prepared.
         //model.setSubject(feedbackStatusEnum);
     }
     public TimeService getTimeService(){return  timeService;}
